@@ -70,8 +70,6 @@ function move_ball()
         part = ((ball_x-50)/ball_x_speed)
         ball_x = ball_x + part*ball_x_speed
         ball_y = ball_y + part*ball_y_speed
-        ball_x = ball_x + ball_x_speed
-        ball_y = ball_y + ball_y_speed
         ball_x_speed = -ball_x_speed + 1
         ball_y_speed = -(p1+padheight/2-ball_y)/10
         ball_x = ball_x - part*ball_x_speed

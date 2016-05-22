@@ -12,6 +12,7 @@ boardwidth = 800
 p1score = 0
 p2score = 0
 paused = false
+pause_toggling = false
 
 function newgame()
     p1 = boardheight / 2 - padheight/2
@@ -87,7 +88,12 @@ function love.update(dt)
         love.event.quit()
     end
     if love.keyboard.isDown("p") then
-        paused = not paused
+        if not pause_toggling then
+            paused = not paused
+        end
+        pause_toggling = true
+    else
+        pause_toggling = false
     end
     if paused then
         return
